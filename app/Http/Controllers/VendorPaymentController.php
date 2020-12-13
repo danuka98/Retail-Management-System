@@ -11,6 +11,7 @@ use App\BankAccount;
 
 class VendorPaymentController extends Controller
 {
+    /**authentication the current user-*/
     public function __construct()
     {
         $this->middleware('auth:admin');
@@ -115,7 +116,7 @@ class VendorPaymentController extends Controller
         return redirect()->back();
     }
 
-    
+    /**use snapy for generate the pdf file*/
     public function createReport(Request $request){
 
         $vendorPayment =  VendorPayment::all()->toArray();
@@ -124,8 +125,8 @@ class VendorPaymentController extends Controller
 
         view()->share('vendorPayment',$vendorPayment);
 
-
-        $pdf =  PDF::loadView('VendorPayment.vendorPaymentReport',$vendorPayment);
+        /** in here load the pdf file */
+        $pdf =  PDF::loadView('VendorPayment.vendorPaymentReport',$vendorPayment);/** */
 
         // // download PDF file with download method
         return $pdf->stream('vendorPayment.pdf');

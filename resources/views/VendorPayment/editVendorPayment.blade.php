@@ -21,7 +21,7 @@
                 <div class="col">
                   <div class="form-group">
                     <label class="sup-label">Vendor Name</label>
-                    <select class="form-control sup-select" name="vendorID" required>
+                    <select class="form-control sup-select" name="vendorID">
                         <option value="" disabled selected hidden>Select a Vendor</option>
                         @foreach($vendor as $v)
                         <option value="{{$v->id}}">{{$v->first_name}}</option>
@@ -32,7 +32,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="sup-label">Payment Type</label>
-                      <select class="form-control sup-select" name="paymentType" id="paymentType" required>
+                      <select class="form-control sup-select" name="paymentType" id="paymentType">
                           <option value="" disabled selected hidden>Select a Payment Type</option>
                           <option value="Cash" >Cash</option>
                           <option value="Bank" >Bank</option>
@@ -46,7 +46,7 @@
                 <div class="col">
                   <div class="form-group" id="bankDetails">
                     <label class="sup-label">Bank Details</label>
-                    <select class="form-control sup-select" name="bank" required>
+                    <select class="form-control sup-select" name="bank">
                         <option value="" disabled selected hidden>Select a Bank</option>
                         @foreach($banks as $b)
                         <option value="{{$b->id}}">{{$b->bankname}} - Holder name : {{ $b->name }} - Acc. No. : {{ $b->number }}</option>

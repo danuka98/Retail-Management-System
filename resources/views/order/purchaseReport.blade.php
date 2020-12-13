@@ -118,7 +118,7 @@
                 <th>Vendor ID</th>
                 <th>Date</th>
                 <th>Expected Date</th>
-                <th>Total</th>
+                {{-- <th>Total</th> --}}
             </tr>
             <tbody>
                 @foreach($purchase as $row)
@@ -127,7 +127,7 @@
                     <td>{{ $row['vendorID'] }}</td>
                     <td>{{ $row['created_at'] }}</td>
                     <td>{{ $row['expectedDate'] }}</td>
-                    <td>{{ $row['total'] }}</td>
+                    {{-- <td>{{ $row['total'] }}</td> --}}
                 </tr>
                 @endforeach
             </tbody>

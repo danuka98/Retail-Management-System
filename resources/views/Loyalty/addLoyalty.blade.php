@@ -73,6 +73,7 @@
                                 <input class="btn-submit" type="submit" value="Submit">
                             </div>
                         </div> --}}
+                        {{-- retriving the componnent --}}
                         <livewire:select-customers/>
                 </div> {{-- End  of sectionContent--}}
             </div> {{-- End  of section 1--}}
@@ -175,6 +176,7 @@
 
     });
 
+//store the databse datails into the array and loop all the data and past the similar customers into the cell 
     function addCustomer(id){
 
         var complex = <?php echo json_encode($customer); ?>;
@@ -186,6 +188,7 @@
             if(array[value]['id'] == id){
             var row = selectedCustomers.insertRow();
             row.className = 'item-table-row';
+            //insert cell
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
@@ -195,6 +198,7 @@
             var cell7 = row.insertCell(6);
             var cell8 = row.insertCell(7);
             var index = num;
+            // insert the data into the cell
             cell1.innerHTML = ++num;
             cell2.innerHTML = array[value]['id'];
             cell3.innerHTML = array[value]['firstname'] + ' ' + array[value]['lastname'];
@@ -209,10 +213,10 @@
             }
         }
         var s = JSON.stringify(arr);
-        document.cookie = "customers = "+s;
+        document.cookie = "customers = "+s; // in here store the customer deatils into the cookie 
     }
 
-
+//if we want to remove the element which we are selecting in customer table here we can do that
 $('#selectedCustomers').on('click', '#remove', function(e){
 
 var index = $(this).closest('tr').index();

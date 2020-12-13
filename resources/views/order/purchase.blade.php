@@ -46,7 +46,7 @@
                 <th>Product Name</th> --}}
                 <th>Vendor Name</th>
                 <th>Date</th>
-                <th>Total</th>
+                {{-- <th>Total</th> --}}
                 <th>Expected Date</th>
                 <th>Actions</th>
             </tr>
@@ -57,7 +57,7 @@
                 <td>{{ $row->id }}</td>
                 <td>{{$row->vendorID}}</td>
                 <td>{{$row->created_at}}</td>
-                <td>{{ $row->total }}</td>
+                {{-- <td>{{ $row->total }}</td> --}}
 
                 <td>{{ $row->expectedDate}}</td>
                 <td class="action-icon">

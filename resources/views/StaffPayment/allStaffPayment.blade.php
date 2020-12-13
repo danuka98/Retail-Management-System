@@ -44,7 +44,7 @@
                     <td>{{ $row->amount}}</td>
                     <td>{{ $row->date }}</td>
                     <td class="action-icon">
-                        <a href="{{ route('salaryPayment.edit',$row->id) }}"><i class="fas fa-pen"></i></a>
+                        {{-- <a href="{{ route('salaryPayment.edit',$row->id) }}"><i class="fas fa-pen"></i></a> --}}
                         <button type="submit" class="dlt-btn" id="dlt-btn{{ $row->id }}"><i class="fas fa-trash-alt"></i></button>
                         <form method="POST" class="dlt-form" id="dlt-form{{ $row->id }}" action="{{ route('salaryPayment.destroy',$row->id) }}">
                             @method('DELETE')
